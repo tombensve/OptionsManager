@@ -2,88 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a3b82a-398a-410c-a785-b115f463b44a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assembly/bin-dist.xml" afterPath="$PROJECT_DIR$/src/assembly/bin-dist.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/site/pdf.xml" afterPath="$PROJECT_DIR$/src/site/pdf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/site/site.xml" afterPath="$PROJECT_DIR$/src/site/site.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/Arguments.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/Arguments.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/Configuration.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/Configuration.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Description.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Description.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex2/LicenseType.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex2/LicenseType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex3/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex3/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionsManagerType.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionsManagerType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/CommandLineOptionsManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/CommandLineOptionsManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/CommandLineOptionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/CommandLineOptionsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple2/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple2/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/OptionsModelException.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/OptionsModelException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionModelInfo.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionModelInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectUsingList.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectUsingList.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectAttrFaulty.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectAttrFaulty.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/XMLElementOptionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/XMLElementOptionsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/InstallOptionsConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/InstallOptionsConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/CopyrightConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/CopyrightConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionsModelAnnotationHelper.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionsModelAnnotationHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectUsingList2.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectUsingList2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/PropertyTypesHelper.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/PropertyTypesHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/utils/XMLAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/utils/XMLAttribute.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/CodeOptionsConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/CodeOptionsConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/PropertiesOptionsManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/PropertiesOptionsManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectAttr2.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectAttr2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Flag.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Flag.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex3/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex3/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OMOptions.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OMOptions.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/project.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/project.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Option.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionsAnnotationHelper.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionsAnnotationHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/XMLAttributeOptionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/XMLAttributeOptionsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectFaulty.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectFaulty.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/PropertiesOptionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/PropertiesOptionsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex2/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex2/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectInvalidLicType.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectInvalidLicType.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionInfos.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionInfos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OMBugException.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OMBugException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/config.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/config.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Optional.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Optional.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/projectAttr.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/projectAttr.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex2/ThirdpartyLicenses.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex2/ThirdpartyLicenses.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/se/biltmore/tools/optionsmgr/project2.xml" afterPath="$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/project2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/PropertyInfo.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/PropertyInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex/ThirdpartyLicenses.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex/ThirdpartyLicenses.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/OptionInfo.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OptionInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/utils/XMLElement.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/utils/XMLElement.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple/ThirdpartyLicense.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple/ThirdpartyLicense.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/ProjectConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/ProjectConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Validate.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Validate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/CopyrightsConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/CopyrightsConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex2/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex2/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/internal/PropertyTypesHelperTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/internal/PropertyTypesHelperTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Type.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Type.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex3/ThirdpartyLicenses.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex3/ThirdpartyLicenses.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/MethodFinder.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/MethodFinder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex4/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex4/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/ValidValues.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/ValidValues.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/ThirdpartyLicensesConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/ThirdpartyLicensesConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex2/LicenseVersion.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex2/LicenseVersion.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex4/ThirdpartyLicenses.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex4/ThirdpartyLicenses.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/XMLAttributeOptionsManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/XMLAttributeOptionsManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Name.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Name.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/OptionsModel.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/OptionsModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/XMLElementOptionsManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/XMLElementOptionsManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/EnumHelper.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/EnumHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple2/ThirdpartyLicense.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple2/ThirdpartyLicense.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/UserDataConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/UserDataConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/OptionsException.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/OptionsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/Path.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/Path.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/annotations/Required.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Required.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/simple2/License.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/simple2/License.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex5/LicenseConfig.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex5/LicenseConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/OptionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/OptionsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/se/biltmore/tools/optionsmgr/internal/PropertyValueValidator.java" afterPath="$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/PropertyValueValidator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/se/biltmore/tools/optionsmgr/testmodels/complex4/Project.java" afterPath="$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/testmodels/complex4/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OptionsManager.iml" afterPath="$PROJECT_DIR$/OptionsManager.iml" />
     </list>
     <ignored path="OptionsManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -141,28 +63,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="futureIdeas.apt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/site/apt/futureIdeas.apt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.apt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/site/apt/index.apt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="0.18848167">
+            <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="2.3167539">
               <folding />
             </state>
           </provider>
@@ -174,6 +78,12 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -194,7 +104,6 @@
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
         <option name="keepSourceFolders" value="false" />
       </MavenImportingSettings>
     </option>
@@ -243,7 +152,7 @@
     <option name="width" value="2071" />
     <option name="height" value="1331" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -269,6 +178,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,25 +319,39 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="297" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="298" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="settings.github" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="297" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="302" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1096" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1096" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="302" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="298" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
@@ -551,7 +477,7 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method>
@@ -621,14 +547,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="251" y="22" width="2071" height="1331" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -636,15 +561,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Code Graph" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19871478" sideWeight="0.6710744" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20266931" sideWeight="0.6702479" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962926" sideWeight="0.6710744" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962926" sideWeight="0.6702479" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -706,118 +632,174 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/CommandLineOptionsManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="6" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="84" column="6" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Option.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="5" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="75" column="5" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assembly/bin-dist.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="561" selection-end="561" vertical-scroll-proportion="-5.1666665">
-          <folding />
-        </state>
+        <state line="15" column="23" selection-start="561" selection-end="561" vertical-scroll-proportion="-5.1666665" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/pdf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="17" selection-start="857" selection-end="857" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
+        <state line="23" column="17" selection-start="857" selection-end="857" vertical-scroll-proportion="-14.375" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/site.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-23.583334">
-          <folding />
-        </state>
+        <state line="46" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-23.583334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="647" selection-end="647" vertical-scroll-proportion="2.6666667">
-          <folding />
-        </state>
+        <state line="21" column="28" selection-start="647" selection-end="647" vertical-scroll-proportion="2.6666667" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/CommandLineOptionsManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="22" column="32" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/se/natusoft/tools/optionsmgr/internal/PropertyTypesHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="115" selection-start="5078" selection-end="5078" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="131" column="115" selection-start="5078" selection-end="5078" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/apt/futureIdeas.apt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/UserGuide.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="9" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.36770922">
-          <folding />
-        </state>
+        <state line="29" column="9" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.36770922" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/apt/user-guide.apt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="25311" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="25311" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/UserGuide.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="896" selection-end="896" vertical-scroll-proportion="0.19633508">
-          <folding />
-        </state>
+        <state line="15" column="28" selection-start="896" selection-end="896" vertical-scroll-proportion="0.19633508" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/apt/maven.apt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.48182586">
-          <folding />
-        </state>
+        <state line="38" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.48182586" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/CreatingPDF.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="0.20287405">
-          <folding />
-        </state>
+        <state line="16" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="0.20287405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/site/apt/index.apt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="0.18848167">
+        <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="2.3167539">
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>OptionsManager</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
