@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a3b82a-398a-410c-a785-b115f463b44a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/apt/futureIdeas.apt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/apt/index.apt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/apt/maven.apt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/apt/user-guide.apt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/pdf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/Biltmore-vertical-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/Biltmore-vertical.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/Biltmore.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/OptionsManager-logo-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/OptionsManager-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/biltmore2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/resources/images/sflogo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/site/site.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OptionsManager.iml" afterPath="$PROJECT_DIR$/OptionsManager.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="OptionsManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +77,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="2.3167539">
+            <state line="217" column="26" selection-start="7725" selection-end="7725" vertical-scroll-proportion="2.8403141">
               <folding />
             </state>
           </provider>
@@ -80,6 +91,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tommy Svensson" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -104,6 +120,7 @@
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
         <option name="keepSourceFolders" value="false" />
       </MavenImportingSettings>
     </option>
@@ -228,92 +245,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="optionsmgr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="optionsmgr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="internal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OptionsManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="optionsmgr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="annotations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -543,6 +474,11 @@
       <created>1349975910311</created>
       <updated>1349975910311</updated>
     </task>
+    <task id="LOCAL-00001" summary="Dev commit.">
+      <created>1350231846582</created>
+      <updated>1350231846582</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -562,11 +498,12 @@
       <window_info id="Code Graph" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20266931" sideWeight="0.6702479" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962926" sideWeight="0.6702479" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962926" sideWeight="0.6702479" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -612,9 +549,9 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dev commit." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -625,16 +562,12 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Dev commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/CommandLineOptionsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="6" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/annotations/Option.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="5" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" />
@@ -643,16 +576,6 @@
     <entry file="file://$PROJECT_DIR$/src/assembly/bin-dist.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="23" selection-start="561" selection-end="561" vertical-scroll-proportion="-5.1666665" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/pdf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="17" selection-start="857" selection-end="857" vertical-scroll-proportion="-14.375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/site.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-23.583334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/se/natusoft/tools/optionsmgr/config.xml">
@@ -670,19 +593,9 @@
         <state line="131" column="115" selection-start="5078" selection-end="5078" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/apt/futureIdeas.apt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/UserGuide.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="9" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.36770922" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/apt/user-guide.apt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="25311" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/UserGuide.html">
@@ -690,24 +603,21 @@
         <state line="15" column="28" selection-start="896" selection-end="896" vertical-scroll-proportion="0.19633508" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/apt/maven.apt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.48182586" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/CreatingPDF.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="0.20287405" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/site/apt/index.apt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/natusoft/tools/optionsmgr/internal/OMOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="52" column="13" selection-start="1894" selection-end="1894" vertical-scroll-proportion="0.55790365">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="30" selection-start="6405" selection-end="6405" vertical-scroll-proportion="2.3167539">
+        <state line="217" column="26" selection-start="7725" selection-end="7725" vertical-scroll-proportion="2.8403141">
           <folding />
         </state>
       </provider>
