@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="MacRoman"?>
+
+<project description="Some Description.">
+    <projectLicense licenseType="ASF" licenseVersion="2"/>
+    <thirdparty>
+        <license licenseType="GPL" licenseVersion="3"/>
+        <license licenseType="LGPL" licenseVersion="2"/>
+    </thirdparty>
+</project>

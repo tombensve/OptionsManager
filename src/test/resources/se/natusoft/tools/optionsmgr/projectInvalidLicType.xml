@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="MacRoman"?>
+
+<project>
+    <name>testproj</name>
+    <description>Some Description.</description>
+    <projectLicense>
+        <licenseType>ASF</licenseType>
+        <licenseVersion>2</licenseVersion>
+    </projectLicense>
+    <thirdparty>
+        <license>
+            <licenseType>BSD</licenseType><!-- Invalid for this test! -->
+            <licenseVersion>3</licenseVersion>
+        </license>
+        <license>
+            <licenseType>LGPL</licenseType>
+            <licenseVersion>2</licenseVersion>
+        </license>
+    </thirdparty>
+</project>

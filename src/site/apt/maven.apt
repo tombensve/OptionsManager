@@ -1,0 +1,38 @@
+    ----------------------
+    Maven Usage
+    ----------------------
+    Tommy Svensson
+    ----------------------
+    2009-12-23
+    ----------------------
+
+Maven Usage
+
+  If you are using maven, add the following to your pom:
+
++----------------------------------------------------------------------------+
+  <project>
+    ...
+    <repositories>
+        ...
+        <repository>
+            <id>maven-biltmore-se</id>
+            <name>Biltmore maven repository</name>
+            <url>http://maven.biltmore.se/mavrep1</url>
+        </repository>
+    </repositories>
+    ...
+  </project>
++----------------------------------------------------------------------------+
+
+  Then add the following dependency:
+
++----------------------------------------------------------------------------+
+  <dependency>
+    <groupId>se.biltmore.tools.optionsmgr</groupId>
+    <artifactId>OptionsManager</artifactId>
+    <version>1.0</version>
+  </dependency>
++----------------------------------------------------------------------------+
+
+  Thats it!

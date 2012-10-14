@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generated-by" content="Markdown PRO, http://markdownpro.com"/>
+<title></title>
+<style type="text/css">
+
+</style><style type="text/css">
+@charset "utf-8";
+
+/**
+ * This is based on Florian Wolters markdown.css, just slightly modified:
+ * - Grayer background.
+ * - Slightly more rounded corners for code.
+ *
+ * /Tommy
+ * ______________________________________________________________________________
+ *
+ * markdown.css
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://gnu.org/licenses/lgpl.txt.
+ *
+ * @project      Weblog and Open Source Projects of Florian Wolters
+ * @version      GIT: $Id$
+ * @package      xhtml-css
+ * @author       Florian Wolters <florian.wolters.85@googlemail.com>
+ * @copyright    2012 Florian Wolters
+ * @cssdoc       version 1.0-pre
+ * @license      http://gnu.org/licenses/lgpl.txt GNU Lesser General Public License
+ * @link         http://github.com/FlorianWolters/jekyll-bootstrap-theme
+ * @media        all
+ * @valid        true
+ */
+
+body {
+    font-family: Helvetica, Arial, Freesans, clean, sans-serif;
+padding:1em;
+margin:auto;
+max-width:55em;
+background:#eeeeee;
+font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    color: #000000;
+    font-size: 28px;
+}
+
+h2 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #000000;
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+
+hr {
+    height: 0.2em;
+    border: 0;
+    color: #CCCCCC;
+    background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 15px 0;
+}
+
+code, pre {
+    border-radius: 5px;
+    background-color: #F8F8F8;
+    color: inherit;
+}
+
+code {
+    border: 1px solid #EAEAEA;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+
+pre {
+    border: 1px solid #CCCCCC;
+    line-height: 1.25em;
+    overflow: auto;
+    padding: 6px 10px;
+}
+
+pre > code {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:visited {
+    color: #4183C4;
+    background-color: inherit;
+    text-decoration: none;
+}
+
+</style></head>
+<body>
+<p><img src="images/OptionsManager-logo-small.png"/></p>
+
+<h1>Options Manager 2.0</h1>
+
+<h4>Copyright © 2009, 2012 Natusoft AB</h4>
+
+<h2>Introduction</h2>
+
+<p>The idea for OptionsManager came (as usual) from a need. When working with
+  another project I needed to have one set of options
+  models and be able to populate them from maven, ant, and a command line
+  tool. Maven and ant being as nice as they are didn&#39;t fight me on this.
+  But when it came to command line arguments I had to manually parse the
+  args string array and populate the model. That really annoyed me. I
+  started thinking, what if you could load models automatically from
+  command line arguments also ? The idea of OptionsManager was born.</p>
+
+<p>OptionsManager supports instantiating and populating annotated
+  (decided to require annotations to offer more flexibility)
+  models from different forms of input. There are 4 variants
+  provided with the package (so far): Command line, properties, XML elements
+  only (like maven), XML elements and attributes (like ant). It is quite
+  simple to create new variants for other type of input if needed.</p>
+
+<p>These are very simple to use for handling options/config of both simple
+  and complex structure. Each option can be documented using the annotations
+  and a help text can be automatically generated from that.</p>
+
+<p><strong>Please Note:</strong>
+  A previous version of this utility exists on <a href="http://optionsmanager.sf.net/">http://optionsmanager.sf.net/</a>.
+  As of version 2.0 this has moved to github and also changed package from
+  <em>se.biltmore….</em> to <em>se.natusoft….</em> The package change was required due to a
+  bad decision by me to use the package name of a company I was part owner
+  of, but in the end didn&#39;t work out as intended and I left. Thereby I 
+  have changed package to my own company name, which I really should have
+  used from the beginning looking in the hind mirror :-). </p>
+
+<h2>Terms used by this document</h2>
+
+<h3>Options Model</h3>
+
+<p>This refers to all annotated JavaBean models whose top level model
+  Class object is passed to the constructor of each OptionsManager
+  subclass and that will be instantiated and loaded with the option
+  values.</p>
+
+<h3>Options path</h3>
+
+<p>This refers to a path from the top level options model down to a
+  JavaBean property value. Internally each part of the path is
+  separated by a &#39;.&#39;. This can be translated to something else
+  externally by the OptionsManager subclass (or the user). For example
+  the CommandLineOptionsManager sets it to &quot;-&quot;. This allows arguments
+  to be paths like &quot;--thirdparty-license-type&quot; where &quot;Thirdparty&quot;, and
+  &quot;License&quot; are options models, and &quot;type&quot; is a JavaBean property in
+  the &quot;License&quot; model.</p>
+
+<p>All exception messages that are result of bad
+  indata when loading includes the options path to the item that failed,
+  separated by the external path separator for the specific OptionsManager.</p>
+
+<p>All key values in the input, no matter what type it is must match in
+  some way the options path to a value. For OptionsManager subclasses
+  that handles input in random order the options path is always a full
+  path. For example CommandlineOptionsManager. For those that takes input
+  in a sequential structured order the options path can be relative.
+  For example the 2 XML OptionsManager variants where each child element
+  can be seen as a relative path to its parent element.</p>
+
+<h3>Top level model</h3>
+
+<p>This is the options model that is specified as T in the generics
+  declaration and also passed to the OptionsManager subclass
+  constructor. This model can in turn have submodels. To differentiate
+  between submodels and this model the term &quot;top level (options) model&quot;
+  is used.</p>
+
+<h2>Options Models</h2>
+
+<p>The options models must be java beans with some supported extensions.
+  Either the private field of the bean property or the public setter
+  method can be annotated. The setter usually offers more flexibility,
+  but in some cases a field is more useful. In general it is a matter
+  of personal taste. It is always the setter that is used to populate a
+  bean property with a value. You can change the name of a property
+  either using @Option(name=&quot;name&quot;) or using @Name(&quot;name&quot;). The setter
+  must however match the annotated name so this is only useful if you
+  annotate fields.</p>
+
+<h3>Supported types</h3>
+
+<p>The following bean property types are supported.</p>
+
+<ul>
+<li><p>All Java primitives + thier object equivalents.</p></li>
+<li><p>java.lang.String</p></li>
+<li><p>java.util.Date</p>
+
+<p>When it comes to Date OptionsManager needs to know the format
+of the date string to be able to parse it into a Date object.
+By default the following formats are supported:</p>
+
+<ul>
+<li>YYYY-MM-DD HH:MM</li>
+<li>YYYY-MM-DD</li>
+<li>HH:MM</li>
+</ul>
+
+<p>If you need to support other Date formats, use the addSimpleDateFormat(&quot;…&quot;)
+or the addDateFormat(DateFormat format) method on the OptionsManager
+instance before calling loadOptions(…). OptionsManager will take
+each format in order and try until it succeeds or fails all.</p></li>
+<li><p>java.net.URL</p></li>
+<li><p>java.io.File</p></li>
+<li><p>Any enum</p>
+
+<p>When loading a value for an enum property the value is case insensitive.
+Enum properties automatically validates input. An OptionsException will
+be thrown if the loaded value does not match one of the enum constants.</p></li>
+</ul>
+
+<h3>Arrays and Maps</h3>
+
+<p>Currently arrays and Map types are not supported.</p>
+
+<p>Collections are supported, so use those instead of arrays.</p>
+
+<p>For Map there is a possible workaround. Make a JavaBean model that
+  internally sits on a Map, and has a key and value setter. When a
+  key is received it should be temporarily saved, and when a value
+  is received the key and value should be added to the map. This will
+  only work with OptionsManager subclasses handling sequential input
+  like XML. In this case annotate the key and value setter methods
+  rather than the Map field.</p>
+
+<h3>Collections</h3>
+
+<p>Both value bean properties and submodel bean properties can be of a
+  &#39;java.util.Collection&#39; type for multiple entries. In this case the
+  type of the object in the &#39;Collection&#39; must be annotated since
+  OptionsManager have no way of knowing what to put in there otherwise.
+  (Generic declarations does unfortunately not reflect).</p>
+
+<p>There are 3 ways to provide setters for &#39;Collection&#39; type properties:</p>
+
+<ol>
+<li><p>A setter that takes the whole &#39;Collection&#39;. This is what you
+ would expect when following the JavaBean standard.</p>
+
+<p>In the Collection case, if the field name or name annotation is
+ &#39;picture&#39; then a setter method name of &#39;setPictures&#39; will still
+ be found.</p>
+
+<p>For this type of setter there are 2 variants for specifying input:</p>
+
+<ol>
+<li>A parent entry of name &#39;list&#39; and entrys matching the annotated
+collection content type.</li>
+<li>A parent entry name that matches the JavaBean property name
+and setter name and that must end with &#39;s&#39; with entries
+matching the annotated collection content type. If the content
+type matches the parent name but without the &#39;s&#39; it will be
+compatible with mavens way of loading collections.</li>
+</ol></li>
+<li><p>A setter that takes just the type of the objects in the collection
+ (that is a setter for a non &#39;Collection&#39; property) but thats adds
+ each set object to the internal &#39;Collection&#39;. In this case the
+ type annotation is not needed since OptionsManager gets it from
+ the setter. This is still JavaBean legal as far as I know since
+ the JavaBean specification only specifies setters and getters
+ the internal storage is up to the bean, again as far as I know.</p>
+
+<p>One reason for doing this is to make the input structure smaller.
+ If we take the &#39;Collection&#39; setter described above as an example
+ we would have something like this:</p>
+
+<pre><code> &lt;data&gt;
+     &lt;pictures&gt;
+         &lt;picture .../&gt;
+         &lt;picture .../&gt;
+         …
+     &lt;/pictures&gt;
+ &lt;/data&gt;
+</code></pre>
+
+<p>But using the method described here would give you:</p>
+
+<pre><code> &lt;data&gt;
+     &lt;picture .../&gt;
+     &lt;picture .../&gt;
+     …
+ &lt;/data&gt;
+</code></pre></li>
+<li><p>The same as the previous alternative, but instead of setMyProp(…)
+ you have an addMyProp(…) which makes the code clearer than the
+ previous setter. This of course completely breaks the JavaBean
+ standard.</p></li>
+</ol>
+
+<h3>The Annotations</h3>
+
+<p>With the exception of @Option all other annotations are optional and
+  most are alternatives for attributes of @option. All @Option
+  attributes are optional (though some are required in certain
+  situations).</p>
+
+<ul>
+<li><p>Option(…) -
+    This is required on each field/setter that are supposed to
+    be loaded by OptionsManager.</p></li>
+<li><p>OptionsModel(name=&quot;…&quot;, description=&quot;…&quot;) -
+    This is used on a options model class and is optional. This
+    can be used on submodels, but is of most use on the top level
+    model.</p>
+
+<ul>
+<li><p>name=&quot;…&quot; -
+  Sets the name of the options model. The default will be
+  the name of the property that holds the model in the parent
+  or if this is the top level options model the name of the
+  model class with the first character decapitalized.</p>
+
+<p>You want to set the name=&quot;&quot; when you dont want the top level
+  options model name to be part of the option path. For example,
+  when using the CommandLineOptionsManager you dont want to
+  specify &quot;--option<em>model</em>name-option<em>property</em>name&quot;. It is much
+  nicer for the user to have to specify &quot;--option<em>property</em>name&quot;.
+  Setting the top level options model name to &quot;&quot; accomplishes
+  that.</p>
+
+<p>The @Name(&quot;name&quot;) annotation can be used as an alternative
+  to this.</p></li>
+<li><p>description=&quot;…&quot; -
+  Supplies a description of the model. This is only used for
+  the top level options model and will be displayed in the
+  generated help text before any options help texts. If the
+  options model is not the top level model this will simply
+  be ignored.</p>
+
+<p>Please note that when you use the @OptionsModel on the top
+  level model and only provide a description you will get a
+  default name of &quot;&quot; which will still override the default
+  non annotated name! This might not be what you intended.</p>
+
+<p>The @Description(&quot;description&quot;) annotation can be used as
+  an alternative to this, and will not affect the name.</p></li>
+</ul></li>
+</ul>
+
+<h4>@Option(name=&quot;…&quot;) / @Name(&quot;…&quot;)</h4>
+
+<p>This specifies the name of the option. If name is not set the name of
+  the field is used if it is a field that is annotated. If it is a setter
+  that is annotated the setter name without &quot;set&quot; and decapitalized will
+  be used. Please note that if you annotate a field a different name
+  than the fieldname can be specified for name=&quot;...&quot;. The setter must
+  however follow the annotated name. Due to that if it is a setter that
+  is annotated the name cannot differ from the setter name, and thus
+  this is not very useful on a setter.</p>
+
+<h4>@Option(description=&quot;...&quot;) / @Description(&quot;...&quot;)</h4>
+
+<p>This provides a description of the option and are used when generating
+  a help text.</p>
+
+<p>It is possible to influence the formatting of the description on help
+  output. The following are available:</p>
+
+<ul>
+<li><p>\\ or Description.NL</p>
+
+<p>Forces a line break.</p></li>
+<li><p>\\ \\ or Description.NLNL</p>
+
+<p>Forces 2 consective line breaks. This creates one empty line.</p></li>
+<li><p>\\m\\ or Description.ManualLineBreaks</p>
+
+<p>Here after no automatic line breaks will done when line is larger
+than specified length.</p></li>
+<li><p>\\a\\ or Description.AutoLineBreaks</p>
+
+<p>Here after automatic line breaks will be done again when line is
+larger than the specified length.</p>
+
+<p>No more than 2 consecutive line breaks are allowed. Any more than
+that will simply be ignored.</p>
+
+<p>Example:</p>
+
+<pre><code>@Description(&quot;This is my first paragraph.&quot; + Description.NLNL +
+       &quot;This is my second paragraph.&quot; +
+       Description.ManualLineBreaks +
+       &quot;My very long and unbroken line until I break it.&quot;)
+</code></pre></li>
+</ul>
+
+<h4>@Option(required=true) / @Required</h4>
+
+<p>This says that the option is required, and validateLoadedOptions() after
+  a loadOptions(...) will throw an OptionsException if a required option
+  has not been set.</p>
+
+<h4>@Optional</h4>
+
+<p>This is the opposite of @Required. All options are however optional
+  unless specified as required, so this does not supply any functionallity,
+  it only has retention SOURCE and are completely ignored. It is only
+  documentative / cosmetic. It has no equivalent attribute in @Option.</p>
+
+<h4>@Option(type=MyType.class) / @Type(MyType.class)</h4>
+
+<p>If you have a JavaBean property whose type is a java.util.Collection
+  then this must be specified to indicate what type is put into the
+  collection.</p>
+
+<h4>@Option(validate=&quot;<regular expression>&quot;) / @Validate(&quot;<regular expression>&quot;)</h4>
+
+<p>This allows you to constrain values for options. When options are loaded
+  the value will be matched against the reqular expression and an
+  OptionsException thrown if it does not match. This can be used for any
+  type of option since all values are provided as strings when loaded and
+  this match is done before the value is converted to the real type.</p>
+
+<h4>@Option(validValues={&quot;value&quot;, ...}) / @ValidValues({&quot;value&quot;, ...})</h4>
+
+<p>This is an alternative to validate, and simply provides a list of valid
+  values.</p>
+
+<h2>The options managers</h2>
+
+<h3>CommandLineOptionsManager</h3>
+
+<p>This is intended for handling command line options, but it really only
+  takes a String array of &quot;key, value, ..., key, value&quot; where the key is
+  an otions path possibly prefixed with custom specified prefix (usually
+  &quot;-&quot; or &quot;--&quot;).</p>
+
+<p>Multiple values for a single key is currently not supported, but something
+  like &quot;value,value,value&quot; can be passed as a single value and your options
+  model can parse it into separate values as a workaround.</p>
+
+<p>Example usage:</p>
+
+<pre><code>  public void main(String[] args) {
+
+    CommandLineOptionsManager&lt;MyOptModel&gt; clom =
+      new CommandLineOptionsManager(MyOptModel.class);
+
+    MyOptModel myOptModel =
+      clom.loadOptions(&quot;--&quot;, &quot;-&quot;, args);
+
+    if (myOptModel.isHelp()) {
+      clom.printHelpText(&quot;--&quot;,&quot;-&quot;,System.out);
+    }
+    else {
+        ...
+    }
+  }
+</code></pre>
+
+<h3>PropertiesOptionsManager</h3>
+
+<p>This loads an option model from a properties file or the properties XML
+  format. Each key in the properties file is an options path separated
+  by &#39;.&#39;.</p>
+
+<p>Example usage:</p>
+
+<pre><code>  PropertiesOptionsManager&lt;MyOptModel&gt; pom =
+    new PropertiesOptionsManager(MyOptModel.class);
+
+  MyOptModel myOptModel =
+    pom.loadOptions(myPropertiesFile);
+</code></pre>
+
+<h3>XMLElementOptionsManager</h3>
+
+<p>This loads an option model from an XML file containing only elements
+  (like the maven pom). This should actualy be more or less compatible
+  with the <configuration> section of a maven plugin configuration.
+  That is you should be able to copy the content of the <configuration>
+  section, stick it in its own xml file, and then load it with this
+  class into the same model as a maven plugin does. That said this class
+  has nothing to do with maven, it just uses the same XML format.</p>
+
+<p>The XML file does not need to be DTD och XML Schema validated at all.
+  It can be the simplest form of XML. It gets validated against the model
+  when loaded, and model options can specify regular expressions that
+  loaded values must match.</p>
+
+<p>Using this or XMLAttributeOptionsManager is just a matter of personal
+  taste in how you like to have your XML.</p>
+
+<p>Example usage:</p>
+
+<pre><code>  XMLElementOptionsManager&lt;MyOptmodel&gt; xeom =
+    new XMLElementOptionsManager(MyOptModel.class);
+
+  MyOptModel myOptModel =
+    xeom.loadOptions(myXMLStream);
+</code></pre>
+
+<h3>XMLAttributeOptionsManager</h3>
+
+<p>This loads an option model from an XML file containing elements
+  representing models and attributes representing value JavaBean
+  proerties, and sub elements representing sub models. This is more
+  or less the same format that Ant tasks use.</p>
+
+<p>The XML file does not need to be DTD och XML Schema validated at all.
+  It can be the simplest form of XML. It gets validated against the model
+  when loaded, and model options can specify regular expressions that
+  loaded values must match.</p>
+
+<p>Using this or XMLElementOptionsManager is just a matter of personal
+  taste in how you like to have your XML.</p>
+
+<p>Example usage:</p>
+
+<pre><code>  XMLAttributeOptionsManager&lt;MyOptmodel&gt; xaom =
+    new XMLAttributeOptionsManager(MyOptModel.class);
+
+  MyOptModel myOptModel =
+    xeom.loadOptions(myXMLStream);
+</code></pre>
+
+<h3>Producing help text</h3>
+
+<p>There are 2 variants of help text generators. All take a prefix, path
+  separator, and a PrintStream or a PrintWriter to produce output on.</p>
+
+<ul>
+<li><p>printHelpText(...)</p>
+
+<p>This variant produces help text for only leafs of the model tree.</p></li>
+<li><p>printHelpTextFull(...)</p>
+
+<p>This variant produces help text for all branches and leafs of the model
+tree.</p>
+
+<p>Annotating the top level model with @OptionsModel and providing a description
+using the description attribute or @Description(&quot;...&quot;) will cause this
+to be displayed before all other properties descriptions. This is useful
+for a general help description.</p></li>
+</ul>
+
+<h2>Exceptions (OptionsException, OptionsModelException, IOException)</h2>
+
+<p>All public APIs throws OptionsException. You can get this on bad input
+  when loading, problems parsing model when instantiating, and problems
+  with model when loading.</p>
+
+<p>There is however a subclass to OptionsException called
+  OptionsModelException and this is thrown when there are any problems
+  with the model class specified, like not finding a setter, not being
+  allowed to instantiate a model, etc. Both the constructor and
+  loadOptions(...) will throw this on model problems.</p>
+
+<p>Model problems means that your model(s) are not entirely correct!
+  A plain OptionsException means the end user has supplied bad input.
+  You should concider handling these 2 cases separately in your code!</p>
+
+<p>OptionsManager subclasses that do IO operations when loading options
+  will also throw IOException.</p>
+
+<h2>Maven Usage</h2>
+
+<p>If you are using maven, add the following to your pom:</p>
+
+<pre><code>&lt;project&gt;
+    ...
+    &lt;dependencies&gt;
+        ...
+        &lt;dependency&gt;
+            &lt;groupId&gt;se.natusoft.tools.optionsmgr&lt;/groupId&gt;
+            &lt;artifactId&gt;OptionsManager&lt;/artifactId&gt;
+            &lt;version&gt;1.0&lt;/version&gt;
+        &lt;/dependency&gt;       
+    &lt;/dependencies&gt;
+    ...
+    &lt;repositories&gt;
+        ...
+        &lt;repository&gt;
+            &lt;id&gt;maven-natusoft-se&lt;/id&gt;
+            &lt;name&gt;Natusoft maven repository&lt;/name&gt;
+            &lt;url&gt;http://maven.natusoft.se/&lt;/url&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+    ...
+&lt;/project&gt;
+</code></pre>
+
+<h2>Writing your own OptionsManager subclass for other inputs</h2>
+
+<p>Please note that the javadoc on the project site only shows the public
+  user APIs, not the internals needed when doing your own subclass!</p>
+
+<p>Declare a class extending OptionsManager.</p>
+
+<pre><code>public class MyOptionsManager&lt;T&gt; extends OptionsManager&lt;T&gt; {
+
+  public MyOptionsManager(Class optionsModelClass)
+      throws OptionsException {
+    super(optionsModelClass);
+  }
+
+  ...
+}
+</code></pre>
+
+<p>Then you need to do an inner class holding all the arguments passed
+  to your loadOptions(...) methods. This class must implement the
+  empty marker interface &quot;Arguments&quot;.</p>
+
+<p>Please note that this is a private inner class used nowhere else,
+  so I consider it completely OK to not use setters and getters on
+  this, but reference the fields directly, which can be done even
+  if they are private.</p>
+
+<pre><code>private static class MyArguments implements Arguments {
+
+  /** The prefix used to indicate an option. */
+  private String argPrefix = &quot;--&quot;;
+
+  /** The command line args. */
+  private String[] args;
+
+  /** The delimeter of a component argument name that maps
+      to a model structure. */
+  private String modelSeparator = &quot;-&quot;;
+
+}
+</code></pre>
+
+<p>Provide a public loadOptions(...) user method for loading optons, create
+  an instance of your Arguments, copy arg data to it, and then pass it
+  to loadOptions(Arguments) in base class. If the loading of options
+  from your input does not throw any IOException you can call the
+  loadOptionsNoIO(Arguments) instead.</p>
+
+<pre><code>public T loadOptions(String argPrefix, String modSep,
+    String[] args) throws OptionsException {
+
+  MyArguments arguments = new MyArguments();
+  arguments.argPrefix = argPrefix;
+  arguments.modelSeparator = modelSeparator;
+  arguments.args = args;
+
+  return loadOptions(arguments);
+}
+</code></pre>
+
+<p>Now you have to override one of the following 2 methods and provide
+  your loading implmentation in it.</p>
+
+<pre><code>protected void loadOptions(OptionInfos optionInfos, Arguments arguments) throws Exception;
+
+protected void loadOptions(OptionModelInfo optionModelInfo, Arguments arguments) throws Exception;
+</code></pre>
+
+<p>The first variant receives an OptionInfos object which contains all
+  OptionInfo and OptionModelInfo created from parsing the model class.
+  These are also used for instantiating and populating the model.</p>
+
+<p>The OptionInfos class contains several methods for accessing the
+  OptionInfo objects:</p>
+
+<pre><code>OptionInfo getOptionInfoByName(String name);
+
+OptionInfo getOptionInfoByPublicPath(Path publicPath);
+
+List&lt;OptionInfo&gt; getRequiredOptionInfos();
+
+List&lt;OptionInfo&gt; getAllValueOptionInfos();
+
+List&lt;OptionInfo&gt; getAllOptionInfos();
+</code></pre>
+
+<p>This is very useful when you are loding input of random paths. In this
+  case you should also call</p>
+
+<pre><code>void assureModelInstance() ;
+</code></pre>
+
+<p>on an OptionInfo before trying to set a value on it (see further down).</p>
+
+<p>The other variant that receives an OptionModelInfo is more useful
+  for loding input of sequential paths. The OptionModelInfo received
+  is the one representing the top level options model. It has 2 useful
+  methods in addition to those inherited from OptionInfo:</p>
+
+<pre><code>List&lt;OptionInfo&gt; getChildren();
+
+OptionInfo getChildByName(String name);
+</code></pre>
+
+<p>These either return all immediate children or a specific child by name,
+  where the name can be seen as a relative options path.</p>
+
+<p>OptionsModelInfo also contains the following method:</p>
+
+<pre><code>Object instantiateModelAndAddToParent();
+</code></pre>
+
+<p>This will create an instance of the model represented by the
+  OptionsModelInfo and add that instance to its parent model (which
+  is expected to have already been instantiated).</p>
+
+<p>No matter if you have random or sequential input the setting of an
+  option value is the same. The OptionInfo class (which OptionModelInfo
+  extends) contains the following method:</p>
+
+<pre><code>void setValueAsString(String value) throws OptionsException;
+</code></pre>
+
+<p>This will validate the value if a @Option(validate=&quot;...&quot;) or
+  @Validate(&quot;...&quot;) have been specified for the value, and then
+  try to convert the string into the type of the JavaBean property,
+  and finally call the property setter with the value.</p>
+
+<p>The easiest way is to download the sourcecode and look at the existing
+  OptionManager subclasses.</p>
+
+<h2>Author / Contact</h2>
+
+<p>My name is Tommy Svensson and I can be reached at <a href="mailto:tommy@natusoft.se">tommy@natusoft.se</a>.</p>
+
+<h2>License (Apache 2.0)</h2>
+
+<p>This code is open source and released under the Apache 2.0 software license available at <a href="http://www.apache.org/licenses/LICENSE-2.0.html">http://www.apache.org/licenses/LICENSE-2.0.html</a> and below.</p>
+
+<p>The markdown CSS for the generated html document is based on Florian Wolters markdown.css. </p>
+
+<h3>License text</h3>
+
+<p>Apache License</p>
+
+<p>Version 2.0, January 2004</p>
+
+<p><a href="http://www.apache.org/licenses/">http://www.apache.org/licenses/</a></p>
+
+<p>TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION</p>
+
+<ol>
+<li><p>Definitions.</p>
+
+<p>&quot;License&quot; shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
+
+<p>&quot;Licensor&quot; shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
+
+<p>&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, &quot;control&quot; means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
+
+<p>&quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
+
+<p>&quot;Source&quot; form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.</p>
+
+<p>&quot;Object&quot; form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.</p>
+
+<p>&quot;Work&quot; shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).</p>
+
+<p>&quot;Derivative Works&quot; shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.</p>
+
+<p>&quot;Contribution&quot; shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, &quot;submitted&quot; means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as &quot;Not a Contribution.&quot;</p>
+
+<p>&quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.</p></li>
+<li><p><strong>Grant of Copyright License.</strong> Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.</p></li>
+<li><p><strong>Grant of Patent License.</strong> Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.</p></li>
+<li><p><strong>Redistribution.</strong> You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:</p>
+
+<p>You must give any other recipients of the Work or Derivative Works a copy of this License; and</p>
+
+<p>You must cause any modified files to carry prominent notices stating that You changed the files; and</p>
+
+<p>You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and</p>
+
+<p>If the Work includes a &quot;NOTICE&quot; text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License. You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.</p></li>
+<li><p><strong>Submission of Contributions.</strong> Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.</p></li>
+<li><p><strong>Trademarks.</strong> This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.</p></li>
+<li><p><strong>Disclaimer of Warranty.</strong> Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.</p></li>
+<li><p><strong>Limitation of Liability.</strong> In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.</p></li>
+<li><p><strong>Accepting Warranty or Additional Liability.</strong> While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.</p></li>
+</ol>
+
+<p>END OF TERMS AND CONDITIONS</p>
+
+<p>APPENDIX: How to apply the Apache License to your work
+To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets &quot;[]&quot; replaced with your own identifying information. (Don&#39;t include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same &quot;printed page&quot; as the copyright notice for easier identification within third-party archives.</p>
+
+<pre><code>Copyright [yyyy] [name of copyright owner]
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+</body>
+</html>

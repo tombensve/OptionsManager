@@ -1,0 +1,11 @@
+    ----------------------
+    Future Ideas
+    ----------------------
+    Tommy Svensson
+    ----------------------
+    2009-12-19
+    ----------------------
+
+  * Give each OptionManager subclass a possibility to adapt/format the
+    help output so that XMLElementOptionsManager for example can output
+    a complete documented example XML.

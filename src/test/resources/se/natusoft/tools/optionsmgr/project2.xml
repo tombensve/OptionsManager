@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="MacRoman"?>
+
+<project>
+    <name>testproj</name>
+    <description>Some Description.</description>
+    <projectLicense>
+        <licenseType>
+            <value>ASF</value>
+        </licenseType>
+        <licenseVersion>
+            <value>2.0</value>
+        </licenseVersion>
+    </projectLicense>
+    <thirdparty>
+        <license>
+            <licenseType>
+                <value>GPL</value>
+            </licenseType>
+            <licenseVersion>
+                <value>3.0</value>
+            </licenseVersion>
+        </license>
+        <license>
+            <licenseType>
+                <value>LGPL</value>
+            </licenseType>
+            <licenseVersion>
+                <value>2.0</value>
+            </licenseVersion>
+        </license>
+    </thirdparty>
+</project>
