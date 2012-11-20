@@ -1,12 +1,8 @@
 package se.natusoft.tools.optionsmgr;
 
-import se.natusoft.tools.optionsmgr.internal.OptionInfos;
 import se.natusoft.tools.codelicmgr.annotations.*;
 import se.natusoft.tools.codelicmgr.enums.Source;
-import se.natusoft.tools.optionsmgr.internal.Arguments;
-import se.natusoft.tools.optionsmgr.internal.OptionInfo;
-import se.natusoft.tools.optionsmgr.internal.OptionsManagerType;
-import se.natusoft.tools.optionsmgr.internal.Path;
+import se.natusoft.tools.optionsmgr.internal.*;
 
 /**
  * Loads the options from a command line string array. Please note that arguments mapping to options are
@@ -77,6 +73,9 @@ public class CommandLineOptionsManager<T> extends OptionsManager<T> {
         /** The command line args. */
         private String[] args;
 
+        /** The start argument to parse. */
+        private int startArg= 0;
+
         /** The delimeter of a component argument name that maps to a model structure. */
         private String modelSeparator = "-";
 
@@ -120,6 +119,24 @@ public class CommandLineOptionsManager<T> extends OptionsManager<T> {
     /**
      * Loads the options and returns a populated model.
      * <p>
+     * This defaults the model separator to "-" and the arguments prefix to "--".
+     *
+     * @param args The arguments to parse and load into the config models.
+     * @param startArg The first argument in the argument array to start at.
+     *
+     * @throws OptionsException on failure or bad arguments.
+     */
+    public T loadOptions(String[] args, int startArg) throws OptionsException {
+        CLOMArguments arguments = new CLOMArguments();
+        arguments.args = args;
+        arguments.startArg = startArg;
+        return loadOptionsNoIO(arguments);
+    }
+
+
+    /**
+     * Loads the options and returns a populated model.
+     * <p>
      * This defaults the model separator to "-".
      *
      * @param argPrefix The expected prefix for arguments.
@@ -131,6 +148,25 @@ public class CommandLineOptionsManager<T> extends OptionsManager<T> {
         CLOMArguments arguments = new CLOMArguments();
         arguments.argPrefix = argPrefix;
         arguments.args = args;
+        return loadOptionsNoIO(arguments);
+    }
+
+    /**
+     * Loads the options and returns a populated model.
+     * <p>
+     * This defaults the model separator to "-".
+     *
+     * @param argPrefix The expected prefix for arguments.
+     * @param args The arguments to parse and load into the config models.
+     * @param startArg The first argument in the argument array to start at.
+     *
+     * @throws OptionsException on failure or bad arguments.
+     */
+    public T loadOptions(String argPrefix, String[] args, int startArg) throws OptionsException {
+        CLOMArguments arguments = new CLOMArguments();
+        arguments.argPrefix = argPrefix;
+        arguments.args = args;
+        arguments.startArg = startArg;
         return loadOptionsNoIO(arguments);
     }
 
@@ -152,6 +188,25 @@ public class CommandLineOptionsManager<T> extends OptionsManager<T> {
     }
 
     /**
+     * Loads the options and returns a populated model.
+     *
+     * @param argPrefix The expected prefix for arguments.
+     * @param modelSeparator The delimeter of a compnent argument that maps to a model structure.
+     * @param args The arguments to parse and load into the config models.
+     * @param startArg The first argument in the argument array to start at.
+     *
+     * @throws OptionsException on failure or bad arguments.
+     */
+    public T loadOptions(String argPrefix, String modelSeparator, String[] args, int startArg) throws OptionsException {
+        CLOMArguments arguments = new CLOMArguments();
+        arguments.argPrefix = argPrefix;
+        arguments.modelSeparator = modelSeparator;
+        arguments.args = args;
+        arguments.startArg = startArg;
+        return loadOptionsNoIO(arguments);
+    }
+
+    /**
      * Implements the populating of the model from the command line arguments.
      *
      * @param optionInfos Extracted information about the specified options model to populate.
@@ -163,7 +218,7 @@ public class CommandLineOptionsManager<T> extends OptionsManager<T> {
     protected void loadOptions(OptionInfos optionInfos, Arguments arguments) throws Exception {
         CLOMArguments loadArguments = (CLOMArguments)arguments;
 
-        int argp = 0;
+        int argp = loadArguments.startArg;
         while (argp < loadArguments.args.length) {
             String arg = loadArguments.args[argp];
             if (!arg.startsWith(loadArguments.argPrefix)) {
