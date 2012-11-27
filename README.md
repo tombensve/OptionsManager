@@ -8,13 +8,13 @@ __Author:__ Tommy Svensson (tommy@natusoft.se)
 
 _A Java tool for handling options in different formats._
 
-[User Guide](docs/UserGuide.md)
+[User Guide](https://github.com/tombensve/OptionsManager/blob/master/docs/UserGuide.md)
 
-[Licenses](docs/licenses.md)
+[Licenses](https://github.com/tombensve/OptionsManager/blob/master/docs/licenses.md)
 
 ----
 
-[PDF version of User Guide](docs/OptionsManager-User-Guide.pdf)
+[PDF version of User Guide](https://github.com/tombensve/OptionsManager/blob/master/docs/OptionsManager-User-Guide.pdf)
 
 ----
 
