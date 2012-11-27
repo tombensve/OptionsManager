@@ -8,7 +8,7 @@
     <version>2.0</version>
     <name>OptionsManager</name>
 
-    <url>http://...</url>
+    <url>http://github.com/tombensve/OptionsManager</url>
 
     <!--
         Project Information
@@ -42,15 +42,6 @@
             <email>tommy@natusoft.se</email>
         </developer>
     </developers>
-    <!--scm>
-        <connection>scm:http://optionsmanager.hg.sourceforge.net:8000/hgroot/optionsmanager/optionsmanager</connection>
-        <developerConnection>scm:ssh://user@optionsmanager.hg.sourceforge.net/hgroot/optionsmanager/optionsmanager</developerConnection>
-        <url>http://optionsmanager.hg.sourceforge.net/hgweb/optionsmanager/</url>
-    </scm-->
-    <!--issueManagement>
-        <system>sourceforge</system>
-        <url>http://sourceforge.net/projects/optionsmanager/support</url>
-    </issueManagement-->
 
     <!--
         Dependencies
@@ -83,56 +74,6 @@
                     <source>1.5</source>
                     <target>1.5</target>
                 </configuration>
-            </plugin>
-
-            <!--
-                PDF Generation of site.
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pdf-plugin</artifactId>
-                <version>1.1</version>
-
-                <configuration>
-                    <includeReports>true</includeReports>
-                    <implementation>fo</implementation>
-                    <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
-                </configuration>
-
-                <!-- This does for some reason not bite when the site is generated! The pdf generation have to be done separately. -->
-                <executions>
-                    <execution>
-                        <id>pdf</id>
-                        <goals>
-                            <goal>pdf</goal>
-                        </goals>
-                        <phase>site</phase>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!--
-                Provide Javadoc skin. Other javadoc config under <reporting/>.
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.6.1</version>
-                <dependencies>
-                </dependencies>
-
-                <executions>
-                    <execution>
-                        <id>jar-javadoc</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                        <configuration>
-                            <attach>true</attach>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <!--
@@ -189,9 +130,62 @@
 
                             <installOptions>
                                 <verbose>true</verbose>
-                                <licenseDir>${basedir}/target/license</licenseDir>
-                                <thirdpartyLicenseDir>${basedir}/target/license/thirdparty</thirdpartyLicenseDir>
+                                <licenseDir>target/license</licenseDir>
+                                <thirdpartyLicenseDir>target/license/thirdparty</thirdpartyLicenseDir>
                             </installOptions>
+
+                            <markdownTargetSubdir>docs</markdownTargetSubdir>
+                            <createLicensesMarkdown>true</createLicensesMarkdown>
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>se.natusoft.tools.doc.markdowndoc</groupId>
+                <artifactId>markdowndoc-maven-plugin</artifactId>
+                <version>1.0</version>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>se.natusoft.tools.doc.markdowndoc</groupId>
+                        <artifactId>markdown-doc-lib</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+
+                <executions>
+                    <execution>
+                        <id>generate-docs</id>
+                        <goals>
+                            <goal>doc</goal>
+                        </goals>
+                        <phase>install</phase>
+                        <configuration>
+
+                            <generatorOptions>
+                                <generator>pdf</generator>
+                                <inputPaths>
+                                    docs/UserGuide.md,
+                                    docs/parts/H1Licenses.mdpart,
+                                    docs/licenses.md,
+                                    docs/parts/H1LicenseTexts.mdpart,
+                                    docs/.*-.*.md
+                                </inputPaths>
+                            </generatorOptions>
+
+                            <pdfGeneratorOptions>
+                                <resultFile>docs/OptionsManager-User-Guide.pdf</resultFile>
+                                <pageSize>A4</pageSize>
+                                <title>Options Manager</title>
+                                <subject>User Guide</subject>
+                                <version>2.0</version>
+                                <author>Tommy Svensson</author>
+                                <copyright>Copyright © 2012 Natusoft AB</copyright>
+                                <generateTitlePage>true</generateTitlePage>
+                                <generateTOC>true</generateTOC>
+                            </pdfGeneratorOptions>
 
                         </configuration>
                     </execution>
@@ -204,13 +198,13 @@
     <!--
         Distribution Management
     -->
-    <distributionManagement>
+    <!--distributionManagement>
         <repository>
             <id>deploy-maven-natusoft-se</id>
             <name>maven.natusoft.se</name>
             <url>file:/LVolumes/Development/repository/maven/maven.natusoft.se</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement-->
 
     <repositories>
         <repository>
@@ -227,25 +221,6 @@
             <url>http://maven.natusoft.se/</url>
         </pluginRepository>
     </pluginRepositories>
-
-    <!--
-        Site / Reporting
-    -->
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.6.1</version>
-                <configuration>
-                    <show>public</show>
-                    <excludePackageNames>se.natusoft.tools.optionsmgr.internal*</excludePackageNames>
-                    <stylesheetfile>css/javadoc-stylesheet.css</stylesheetfile>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </reporting>
 
     <!--
         Profiles
