@@ -1,5 +1,7 @@
 # OptionsManager
 
+Copyright © 2012 Natusoft AB
+
 __Version:__ 2.0
 
 __Author:__ Tommy Svensson (tommy@natusoft.se)
