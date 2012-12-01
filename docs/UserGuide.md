@@ -21,16 +21,6 @@
   These are very simple to use for handling options/config of both simple
   and complex structure. Each option can be documented using the annotations
   and a help text can be automatically generated from that.
-  
-  **Please Note:**
-  A previous version of this utility exists on <http://optionsmanager.sf.net/>.
-  As of version 2.0 this has moved to github (<githib.com/tombensve/OptionsManager>) 
-  and also changed package from *se.biltmore...* to *se.natusoft...* The package
-  change was required due to a bad decision by me to use the package name
-  of a company I was part owner of, but in the end didn't work out as
-  intended and I left. Thereby I have changed package to my own company
-  name, which I really should have used from the beginning looking in
-  the hind mirror :-).
 
 ##Terms used by this document
 
@@ -73,7 +63,7 @@
   is used.
 
 
-##Options Models
+#Options Models
 
   The options models must be java beans with some supported extensions.
   Either the private field of the bean property or the public setter
@@ -325,7 +315,7 @@
 
 
 
-## The options managers
+# The options managers
 
 ### CommandLineOptionsManager
 
@@ -440,6 +430,8 @@
   for a general help description.
 
 
+
+# Misc
 
 ## Exceptions (OptionsException, OptionsModelException, IOException)
 
@@ -609,3 +601,23 @@
 
   The easiest way is to download the sourcecode and look at the existing
   OptionManager subclasses.
+
+
+# Special note to users of version < 2.0.
+
+A previous version of this utility exists on <http://optionsmanager.sf.net/>.
+As of version 2.0 this has moved to github and also changed package from _se.biltmore..._
+to _se.natusoft..._ The package change was required due to a bad decision by me to use the
+package name of a company my company was part owner of, but in the end didn't work out as
+intended and I left. Thereby I have changed package to my own company name.
+
+If you used the previous version then a search and replace of
+
+    <groupId>se.biltmore.tools.optionsmgr</groupId>
+
+to
+
+    <groupId>se.natusoft.tools.optionsmgr</groupId>
+
+in your pom(s) should be enough. The only difference between version 2.0
+and previous is the package change!
