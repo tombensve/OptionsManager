@@ -611,13 +611,6 @@ to _se.natusoft..._ The package change was required due to a bad decision by me 
 package name of a company my company was part owner of, but in the end didn't work out as
 intended and I left. Thereby I have changed package to my own company name.
 
-If you used the previous version then a search and replace of
-
-    <groupId>se.biltmore.tools.optionsmgr</groupId>
-
-to
-
-    <groupId>se.natusoft.tools.optionsmgr</groupId>
-
-in your pom(s) should be enough. The only difference between version 2.0
+If you used the previous version then a search and replace of _biltmore_ to _natusoft_
+in both poms and imports should be enough. The only difference between version 2.0
 and previous is the package change!
