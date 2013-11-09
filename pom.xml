@@ -341,7 +341,7 @@
                                 <configuration>
                                     <scripts>
                                         <script>
-                                            <forArtifactId>FileEditor</forArtifactId>
+                                            <forArtifactId>OptionsManager</forArtifactId>
                                             <scriptFile>script:pom_add_parent.bsh</scriptFile>
                                             <sourcePath>${basedir}/pom.xml</sourcePath>
                                             <variables>
@@ -360,7 +360,7 @@
                                             </variables>
                                         </script>
                                         <script>
-                                            <forArtifactId>FileEditor</forArtifactId>
+                                            <forArtifactId>OptionsManager</forArtifactId>
                                             <scriptFile>script:pom_add_snapshot_to_version.bsh</scriptFile>
                                             <sourcePath>${basedir}/pom.xml</sourcePath>
                                         </script>
