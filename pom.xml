@@ -43,6 +43,12 @@
         </developer>
     </developers>
 
+    <scm>
+        <url>https://github.com/tombensve/OptionsManager.git</url>
+        <connection>scm:git:git@github.com:tombensve/OptionsManager.git</connection>
+        <developerConnection>scm:git:git@github.com:tombensve/OptionsManager.git</developerConnection>
+    </scm>
+
     <!--
         Dependencies
     -->
@@ -196,33 +202,6 @@
     </build>
 
     <!--
-        Distribution Management
-    -->
-    <!--distributionManagement>
-        <repository>
-            <id>deploy-maven-natusoft-se</id>
-            <name>maven.natusoft.se</name>
-            <url>file:/LVolumes/Development/repository/maven/maven.natusoft.se</url>
-        </repository>
-    </distributionManagement-->
-
-    <repositories>
-        <repository>
-            <id>maven-natusoft-se</id>
-            <name>Natusoft maven repository</name>
-            <url>http://maven.natusoft.se/</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>plugin-maven-natusoft-se</id>
-            <name>Natusoft maven repository.</name>
-            <url>http://maven.natusoft.se/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <!--
         Profiles
     -->
     <profiles>
@@ -302,6 +281,93 @@
                             </execution>
                         </executions>
 
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>sonaify</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>se.natusoft.tools.fileeditor</groupId>
+                        <artifactId>file-editor-maven-support-plugin</artifactId>
+                        <version>1.0</version>
+
+                        <dependencies>
+                            <dependency>
+                                <groupId>se.natusoft.tools.fileeditor</groupId>
+                                <artifactId>file-editor-maven-support-scripts</artifactId>
+                                <version>1.0</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>upd-parent-and-snapshot</id>
+                                <goals>
+                                    <goal>edit</goal>
+                                </goals>
+                                <phase>generate-sources</phase>
+                                <inherited>true</inherited>
+                                <configuration>
+                                    <scripts>
+                                        <script>
+                                            <forArtifactId>FileEditor</forArtifactId>
+                                            <scriptFile>script:pom_add_parent.bsh</scriptFile>
+                                            <sourcePath>${basedir}/pom.xml</sourcePath>
+                                            <variables>
+                                                <variable>
+                                                    <name>groupId</name>
+                                                    <value>org.sonatype.oss</value>
+                                                </variable>
+                                                <variable>
+                                                    <name>artifactId</name>
+                                                    <value>oss-parent</value>
+                                                </variable>
+                                                <variable>
+                                                    <name>version</name>
+                                                    <value>7</value>
+                                                </variable>
+                                            </variables>
+                                        </script>
+                                        <script>
+                                            <forArtifactId>FileEditor</forArtifactId>
+                                            <scriptFile>script:pom_add_snapshot_to_version.bsh</scriptFile>
+                                            <sourcePath>${basedir}/pom.xml</sourcePath>
+                                        </script>
+                                    </scripts>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
