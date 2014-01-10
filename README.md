@@ -20,15 +20,4 @@ _A Java tool for handling options in different formats._
 
 ----
 
-__Maven Repository__
-
-This tool is available for download by maven (and other tools using maven repositories) by
-adding the following repository:
-
-    <repositories>
-        <repository>
-            <id>maven-natusoft-se</id>
-            <name>Natusoft maven repository</name>
-            <url>http://maven.natusoft.se/</url>
-        </repository>
-    </repositories>
+[Maven repo setup](https://github.com/tombensve/CommonStuff/blob/master/docs/MavenRepository.md)
