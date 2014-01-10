@@ -23,12 +23,33 @@ _A Java tool for handling options in different formats._
 __Maven Repository__
 
 This tool is available for download by maven (and other tools using maven repositories) by
-adding the following repository:
+adding the following repository in your settings.xml:
 
-    <repositories>
-        <repository>
-            <id>maven-natusoft-se</id>
-            <name>Natusoft maven repository</name>
-            <url>http://maven.natusoft.se/</url>
-        </repository>
-    </repositories>
+    <profiles>
+        <profile>
+            <id>bintray</id>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>bintray</name>
+                    <url>http://dl.bintray.com/tommy/maven</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>bintray-plugins</name>
+                    <url>http://dl.bintray.com/tommy/maven</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+       <activeProfile>bintray</activeProfile>
+    </activeProfiles>
