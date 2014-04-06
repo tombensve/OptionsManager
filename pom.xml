@@ -209,7 +209,7 @@
                                 <pageSize>A4</pageSize>
                                 <title>Options Manager</title>
                                 <subject>User Guide</subject>
-                                <version>2.0</version>
+                                <version>${project.version}</version>
                                 <author>Tommy Svensson</author>
                                 <copyright>Copyright © 2012 Natusoft AB</copyright>
                                 <generateTitlePage>true</generateTitlePage>
