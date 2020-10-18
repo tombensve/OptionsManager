@@ -163,7 +163,7 @@
      One reason for doing this is to make the input structure smaller.
      If we take the 'Collection' setter described above as an example
      we would have something like this:
-
+```xml
          <data>
              <pictures>
                  <picture .../>
@@ -171,7 +171,7 @@
                  …
              </pictures>
          </data>
-
+```
      But using the method described here would give you:
 
          <data>
