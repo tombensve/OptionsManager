@@ -473,7 +473,7 @@
 			<repository>
 				<id>maven-natusoft-se</id>
 				<name>Natusoft maven repository</name>
-				<url>http://maven.natusoft.se/</url>
+				<url>http://download.natusoft.se/maven/</url>
 			</repository>
 		</repositories>
 		...
